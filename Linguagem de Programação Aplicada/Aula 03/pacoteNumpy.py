@@ -43,6 +43,8 @@ print(matriz.shape)
 matriz2 = np.random.randn(4,4) ## Podemos criar matrizes com dados aleatórios
 print(matriz2)
 
+print(dir(vet)) ## Podemos ver todos os métodos do pacote numpy
+
 ## Com a biblioteca NumPy, temos acesso a inumeras funções matemáticas e estatísticas
 ## Podemos usar a função mean para obter a média de um vetor
 ## Podemos usar a função std para obter a desvio padrão de um vetor
