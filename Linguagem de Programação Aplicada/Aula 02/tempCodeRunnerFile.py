@@ -1,1 +1,0 @@
-fruta = objFrutas.add('Uva')

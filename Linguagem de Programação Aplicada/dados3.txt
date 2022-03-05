@@ -1,1 +1,0 @@
-Testando e aplicando estudos de escrita e leitura de dados em arquivos de texto!
