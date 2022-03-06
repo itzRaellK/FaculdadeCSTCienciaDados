@@ -4,12 +4,10 @@
 
 CREATE DATABASE tabelaFormulaUm;
 
-DROP TABLE tb_pais;
-
 CREATE TABLE tb_pais(
 	id SERIAL PRIMARY KEY,
 	nm_pais VARCHAR(20) NOT NULL,
-	nr_populacao NUMERIC(8,3) NOT NULL
+	nr_populacao INT NOT NULL
 );
 
 CREATE TABLE tb_piloto(
