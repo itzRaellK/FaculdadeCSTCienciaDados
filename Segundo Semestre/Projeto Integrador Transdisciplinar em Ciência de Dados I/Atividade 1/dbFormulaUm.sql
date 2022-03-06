@@ -4,7 +4,7 @@
 
 CREATE DATABASE tabelaFormulaUm;
 
-DROP TABLE tb_pais;
+-- DROP TABLE tb_pais, tb_piloto, tb_equipe, tb_circuito, tb_prova, tb_resultado;
 
 CREATE TABLE tb_pais(
 	id SERIAL PRIMARY KEY,
@@ -29,14 +29,14 @@ CREATE TABLE tb_equipe(
 CREATE TABLE tb_circuito(
 	id SERIAL PRIMARY KEY,
 	nm_circuito VARCHAR(30),
-	nr_extensao INT NOT NULL,
+	nr_extensao NUMERIC(8,3) NOT NULL,
 	id_pais INT NOT NULL
 );
 
 CREATE TABLE tb_prova(
 	id SERIAL PRIMARY KEY,
 	dt_prova DATE NOT NULL,
-	nm_situacao INT NOT NULL,
+	nm_situacao VARCHAR(30) NOT NULL,
 	id_circuito INT NOT NULL
 );
 
@@ -46,5 +46,5 @@ CREATE TABLE tb_resultado(
 	nr_tempo_prova TIME NOT NULL,
 	nr_colocacao_final INT NOT NULL,
 	nr_posicao_grid INT NOT NULL,
-	nr_melhor_volta INT NOT NULL
+	nr_melhor_volta TIME NOT NULL
 );

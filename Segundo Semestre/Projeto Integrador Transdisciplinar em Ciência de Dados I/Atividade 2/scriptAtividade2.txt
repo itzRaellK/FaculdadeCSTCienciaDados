@@ -8,7 +8,7 @@
 
 -- Tabela País
 INSERT INTO tb_pais(nm_pais, nr_populacao) VALUES ('Holanda', 17.673);		-- id = 1
-INSERT INTO tb_pais(nm_pais, nr_populacao) VALUES ('Inglaterra', 55.450);	-- id = 2
+INSERT INTO tb_pais(nm_pais, nr_populacao) VALUES ('Inglaterra', 55.450);		-- id = 2
 INSERT INTO tb_pais(nm_pais, nr_populacao) VALUES ('Finlândia', 5.531);		-- id = 3
 INSERT INTO tb_pais(nm_pais, nr_populacao) VALUES ('México', 128.9);		-- id = 4
 INSERT INTO tb_pais(nm_pais, nr_populacao) VALUES ('Austrália', 25.69);		-- id = 5

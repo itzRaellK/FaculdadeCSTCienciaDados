@@ -1,0 +1,25 @@
+
+-- Exercício Faculdade
+-- Atividade 3 - Consultas com select
+
+SELECT * FROM tb_equipe;
+SELECT * FROM tb_piloto;
+SELECT * FROM tb_pais;
+SELECT * FROM tb_resultado;
+SELECT * FROM tb_prova;
+SELECT * FROM tb_circuito;
+
+-- 1) Selecionar os pilotos que são da equipe Ferrari, baseados no DER do início do Projeto.
+SELECT nm_piloto as nome, dt_nascimento as nascimento, id_pais as pais FROM tb_piloto
+	WHERE id_equipe = (SELECT id FROM tb_equipe WHERE nm_equipe LIKE 'Ferrari');
+	
+-- 2) Exibir a quantidade de pilotos por ano de nascimento, ordenando-os por este aspecto de
+-- forma ascendente – do ano mais antigo ao mais recente (utilize o mesmo DER).
+SELECT DISTINCT(DATE_PART('YEAR', dt_nascimento)) as Ano, COUNT(id) as Quantidade FROM tb_piloto GROUP BY ano ORDER BY ano;
+
+-- 3) Por fim, exibir o nome do piloto, o seu país de nascimento, nome da equipe, país da equipe, colocação final, nome do circuito
+-- e a data da realização da prova na Austrália – lembre-se de utilizar o mesmo DER.
+SELECT DISTINCT ON (nm_equipe) nm_piloto as nome, nm_pais as naturalidade, nm_equipe as equipe, nm_pais as pais,
+	nr_colocacao_final as colocacao, nm_circuito as circuito, dt_prova as dataprova
+		FROM tb_piloto, tb_pais, tb_equipe, tb_resultado, tb_circuito, tb_prova
+			WHERE tb_circuito.id_pais = (SELECT id FROM tb_pais WHERE nm_pais LIKE 'Espanha');
